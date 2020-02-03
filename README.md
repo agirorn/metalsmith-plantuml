@@ -1,3 +1,6 @@
+[![npm version][npm-badge]][npm-link]
+[![Build Status][travis-badge]][travis-link]
+
 # metalsmith-plantuml
 
 A Metalsmith plugin that inlines PlantUML code blocks as SVG images in Markdown files
@@ -48,3 +51,8 @@ metalsmith
 ## License
 
 MIT
+
+[npm-badge]: https://badge.fury.io/js/metalsmith-plantuml.svg
+[npm-link]: https://badge.fury.io/js/metalsmith-plantuml
+[travis-badge]: https://travis-ci.org/agirorn/metalsmith-plantuml.svg?branch=master
+[travis-link]: https://travis-ci.org/agirorn/metalsmith-plantuml
