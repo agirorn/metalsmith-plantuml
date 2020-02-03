@@ -25,6 +25,7 @@
   "author": "Ægir Örn Símonarson <agirorn@gmail.com>",
   "main": "lib/metalsmith-plantuml.js",
   "scripts": {
+    "ci": "yarn test && yarn lint",
     "dev": "yardman .eslintrc* package.json lib spec/*.js  spec/**/*.json spec/fixtures/*/{src,expected} !spec/fixtures 'yarn dev:exec'",
     "dev:exec": "clear && yarn test && yarn lint",
     "lint": "eslint lib spec .eslintrc.js",
