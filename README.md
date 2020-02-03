@@ -20,7 +20,7 @@ order is important, PlantUML must be processed before Markdown)
 {
   "plugins": {
     "metalsmith-plantuml": {},
-    "metalsmith-markdonw": {}
+    "metalsmith-markdown": {}
   }
 }
 ```
