@@ -1,0 +1,52 @@
+{
+  "name": "metalsmith-plantuml",
+  "version": "0.0.0",
+  "description": "A Metalsmith plugin to inline PlantUML code blocks as SVG images in Markdown files",
+  "keywords": [
+    "PlantUML",
+    "UML",
+    "Unified Modeling Language",
+    "Modeling",
+    "markdown",
+    "metalsmith",
+    "Sequence diagram",
+    "Usecase diagram",
+    "Class diagram",
+    "Activity diagram",
+    "Component diagram",
+    "State diagram",
+    "Object diagram",
+    "Deployment diagram",
+    "Timing diagram"
+  ],
+  "bugs": "https://github.com/agirorn/metalsmith-plantuml/issues",
+  "repository": "git://github.com/agirorn/metalsmith-plantuml.git",
+  "license": "MIT",
+  "author": "Ægir Örn Símonarson <agirorn@gmail.com>",
+  "main": "lib/metalsmith-plantuml.js",
+  "scripts": {
+    "dev": "yardman .eslintrc* package.json lib spec/*.js  spec/**/*.json spec/fixtures/*/{src,expected} !spec/fixtures 'yarn dev:exec'",
+    "dev:exec": "clear && yarn test && yarn lint",
+    "lint": "eslint lib spec .eslintrc.js",
+    "test": "jasmine"
+  },
+  "dependencies": {
+    "get-stream": "^5.1.0",
+    "node-plantuml": "^0.9.0",
+    "p-each-series": "^2.1.0",
+    "p-map": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "jasmine": "^3.5.0",
+    "jasmine-node-promise-matchers": "^0.2.0",
+    "jasmine-slow-reporter": "^0.1.0",
+    "jasmine-vow": "^0.0.3",
+    "metalsmith": "^2.3.0",
+    "metalsmith-markdown": "^1.3.0",
+    "yardman": "^0.0.9"
+  }
+}
