@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-plantuml",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Metalsmith plugin to inline PlantUML code blocks as SVG images in Markdown files",
   "keywords": [
     "PlantUML",
