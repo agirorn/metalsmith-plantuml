@@ -1,0 +1,8 @@
+@startuml
+  IQF -> Broker: 0MQ: get latests config @iqf/PROGRAM_ID/get/config
+  Broker -> Proxy: 0MQ: get latests config
+  Proxy -> RapidFish: HTTP:
+  RapidFish --> Proxy: Response with Setting JSON
+  Proxy --> Broker: 0MQ: config :: @rapid-fish/PROGRAM_ID/send/config
+  Broker --> IQF: 0MQ: config
+@enduml

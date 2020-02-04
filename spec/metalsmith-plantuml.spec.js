@@ -1,6 +1,8 @@
 const { readFile } = require('fs').promises;
 const { resolve } = require('path');
 const Metalsmith = require('metalsmith');
+const plantuml = require('node-plantuml');
+const getStream = require('get-stream');
 const uml = require('..');
 
 const fileContent = async (name) => (await readFile(resolve(name)))
@@ -31,6 +33,10 @@ const SECOND_SVG_UML = [
 
 const PROJECT_DIR = 'spec/fixtures/plantuml';
 
+const genUml = async (text) => {
+  const gen = plantuml.generate(text, { format: 'svg' });
+  return getStream(gen.out);
+};
 
 describe('metalsmith-plantuml', () => {
   describe('codeBlocks active', () => {
@@ -38,7 +44,7 @@ describe('metalsmith-plantuml', () => {
       .use(uml())
       .build(done));
 
-    it('new - should inline PlantUML diagram as base64 encoded SVG in markdown', async () => {
+    it('should inline PlantUML diagram as base64 encoded SVG in markdown', async () => {
       const file = await fileContent('spec/fixtures/plantuml/build/index.md');
       expect(file).toContain(FIRST_SVG_UML);
       expect(file).toContain(SECOND_SVG_UML);
@@ -50,10 +56,26 @@ describe('metalsmith-plantuml', () => {
       .use(uml({ codeBlocks: false }))
       .build(done));
 
-    it('new - should inline PlantUML diagram as base64 encoded SVG in markdown', async () => {
+    it('should not inline PlantUML diagram in markdown', async () => {
       const file = await fileContent('spec/fixtures/plantuml/build/index.md');
       expect(file).not.toContain(FIRST_SVG_UML);
       expect(file).not.toContain(SECOND_SVG_UML);
+    });
+  });
+
+  describe('plantum files', () => {
+    beforeEach((done) => Metalsmith(PROJECT_DIR)
+      .use(uml())
+      .build(done));
+
+    it('should convert plantuml files to SVG', async () => {
+      const file = await fileContent('spec/fixtures/plantuml/build/a-to-b.svg');
+      const PLANTUML = (await genUml(`
+        @startuml
+          A -> B: Hello
+        @enduml
+      `)).slice(0, 383);
+      expect(file).toContain(PLANTUML);
     });
   });
 });
