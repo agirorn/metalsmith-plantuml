@@ -38,35 +38,37 @@ const genUml = async (text) => {
   return getStream(gen.out);
 };
 
+const TITMEOUT = 20000;
+
 describe('metalsmith-plantuml', () => {
   describe('codeBlocks active', () => {
     beforeEach((done) => Metalsmith(PROJECT_DIR)
       .use(uml())
-      .build(done));
+      .build(done), TITMEOUT);
 
     it('should inline PlantUML diagram as base64 encoded SVG in markdown', async () => {
       const file = await fileContent('spec/fixtures/plantuml/build/index.md');
       expect(file).toContain(FIRST_SVG_UML);
       expect(file).toContain(SECOND_SVG_UML);
-    });
+    }, TITMEOUT);
   });
 
   describe('codeBlocks disabled', () => {
     beforeEach((done) => Metalsmith(PROJECT_DIR)
       .use(uml({ codeBlocks: false }))
-      .build(done));
+      .build(done), TITMEOUT);
 
     it('should not inline PlantUML diagram in markdown', async () => {
       const file = await fileContent('spec/fixtures/plantuml/build/index.md');
       expect(file).not.toContain(FIRST_SVG_UML);
       expect(file).not.toContain(SECOND_SVG_UML);
-    });
+    }, TITMEOUT);
   });
 
   describe('plantum files', () => {
     beforeEach((done) => Metalsmith(PROJECT_DIR)
       .use(uml())
-      .build(done));
+      .build(done), TITMEOUT);
 
     it('should convert plantuml files to SVG', async () => {
       const file = await fileContent('spec/fixtures/plantuml/build/a-to-b.svg');
@@ -76,6 +78,6 @@ describe('metalsmith-plantuml', () => {
         @enduml
       `)).slice(0, 383);
       expect(file).toContain(PLANTUML);
-    });
+    }, TITMEOUT);
   });
 });
