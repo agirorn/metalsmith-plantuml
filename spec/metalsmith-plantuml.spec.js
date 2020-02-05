@@ -9,26 +9,23 @@ const fileContent = async (name) => (await readFile(resolve(name)))
   .toString();
 
 const FIRST_SVG_UML = [
-  '![plantuml](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M',
-  'y5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hs',
-  'aW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNtYXNjcmlwdCIgY29udGV',
-  'udFN0eWxlVHlwZT0idGV4dC9jc3MiIGhlaWdodD0iMTI3cHgiIHByZXNlcnZlQXNwZWN0Um',
-  'F0aW89Im5vbmUiIHN0eWxlPSJ3aWR0aDo5OHB4O2hlaWdodDoxMjdweDsiIHZlcnNpb249I',
-  'jEuMSIgdmlld0JveD0iMCAwIDk4IDEyNyIgd2lkdGg9Ijk4cHgiIHpvb21BbmRQYW49Im1h',
-  'Z25pZnkiPjxkZWZzPjxmaWx0ZXIgaGVpZ2h0PSIzMDAlIiBpZD0iZjFyNjQ0emxiemN2c24',
-  'iIHdpZHRoPSIzMDAlIiB4PSItMSIgeT0iLTEiPjxmZUdhdXNzaWFuQmx',
+  '![plantuml](data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZ',
+  'z0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv',
+  'MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb25',
+  '0ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNtYXNjcmlwdCIgY29udGVudFN0eWxlVHlwZT',
+  '0idGV4dC9jc3MiIGhlaWdodD0iMTI4cHgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0e',
+  'WxlPSJ3aWR0aDo5OXB4O2hlaWdodDoxMjhweDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAw',
+  'IDk5IDEyOCIgd2lkdGg9Ijk5cHgiIHpvb21BbmRQYW49Im1hZ25',
 ].join('');
 
-
 const SECOND_SVG_UML = [
-  '![plantuml](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M',
-  'y5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hs',
-  'aW5rIiBjb250ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNtYXNjcmlwdCIgY29udGV',
-  'udFN0eWxlVHlwZT0idGV4dC9jc3MiIGhlaWdodD0iMTI3cHgiIHByZXNlcnZlQXNwZWN0Um',
-  'F0aW89Im5vbmUiIHN0eWxlPSJ3aWR0aDo5OXB4O2hlaWdodDoxMjdweDsiIHZlcnNpb249I',
-  'jEuMSIgdmlld0JveD0iMCAwIDk5IDEyNyIgd2lkdGg9Ijk5cHgiIHpvb21BbmRQYW49Im1h',
-  'Z25pZnkiPjxkZWZzPjxmaWx0ZXIgaGVpZ2h0PSIzMDAlIiBpZD0iZmh2emZjZGp5YmNvYSI',
-  'gd2lkdGg9IjMwMCUiIHg9Ii0xIiB5PSItMSI+PGZlR2F1c3NpYW5CbHV',
+  '![plantuml](data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZ',
+  'z0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv',
+  'MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBjb25',
+  '0ZW50U2NyaXB0VHlwZT0iYXBwbGljYXRpb24vZWNtYXNjcmlwdCIgY29udGVudFN0eWxlVHlwZT',
+  '0idGV4dC9jc3MiIGhlaWdodD0iMTI4cHgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0e',
+  'WxlPSJ3aWR0aDoxMDBweDtoZWlnaHQ6MTI4cHg7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAg',
+  'MCAxMDAgMTI4IiB3aWR0aD0iMTAwcHgiIHpvb21BbmRQYW49Im1',
 ].join('');
 
 const PROJECT_DIR = 'spec/fixtures/plantuml';
