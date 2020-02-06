@@ -2,12 +2,12 @@
 
 ```plantuml
 @startuml
-A -> B: Hello
+Woody -> Lightyear: friends
 @enduml
 ```
 
 ```plantuml
 @startuml
-C -> Q: Hello
+Peep -> Potato: Hello
 @enduml
 ```
