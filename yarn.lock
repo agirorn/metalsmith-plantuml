@@ -1397,10 +1397,10 @@ plantuml-encoder@^1.2.5:
   resolved "https://registry.yarnpkg.com/plantuml-encoder/-/plantuml-encoder-1.4.0.tgz#7899302cf785de956bf1a167e15420feee5975f7"
   integrity sha512-sxMwpDw/ySY1WB2CE3+IdMuEcWibJ72DDOsXLkSmEaSzwEUaYBT6DWgOfBiHGCux4q433X6+OEFWjlVqp7gL6g==
 
-plantuml@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/plantuml/-/plantuml-0.0.1.tgz#7e061176d8f2b0ecd8b4e34841bfca21b945b92c"
-  integrity sha512-uey4aw73CwywLm0wr0mDqPGYZUmZ/OtsWyneJwOvIDJsj1r1+9PPFNYBuCmvS39dXxnuNw9rGsgdQqNGRr4dAw==
+plantuml@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/plantuml/-/plantuml-0.0.2.tgz#f27be99ad275d8a2e42a33ee379e1342c0b024e5"
+  integrity sha512-3YzQJUO1Yg+mDckTm3Ht5Q8bmtN8g3M9LD8fXqiqHDW3vzUpHrUe9lxVY6AT1I50w7FdOned0hhJno4JBIku2g==
   dependencies:
     execa "^4.0.0"
     get-stream "^5.1.0"

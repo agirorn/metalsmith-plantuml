@@ -70,8 +70,11 @@ describe('metalsmith-plantuml', () => {
         @startuml
           A -> B: Hello
         @enduml
-      `)).slice(0, 383);
+      `)).slice(0, 100);
       expect(file).toContain(PLANTUML);
+      expect(file).toContain('A</text>');
+      expect(file).toContain('B</text>');
+      expect(file).toContain('Hello</text>');
     }, TITMEOUT);
   });
 });
